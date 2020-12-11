@@ -1,0 +1,83 @@
+﻿<Page x:Class="ThermostatGui.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:ThermostatGui"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:controls="using:ThermostatGui.Shared.Controls"
+      mc:Ignorable="d"
+      Background="{StaticResource DefaultAppBackgroundBrush}">
+
+
+    <Grid Background="Transparent"
+          HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Grid.Column="0">
+            <Viewbox StretchDirection="DownOnly">
+                <TextBlock>Mon Dec 02, 11:51 a.m.</TextBlock>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="1"
+              Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Padding="40,40,40,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Viewbox StretchDirection="Both"
+                         Stretch="Uniform">
+
+                    <TextBlock FontStretch="Expanded"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="100">72&#x00B0;C
+                    </TextBlock>
+                </Viewbox>
+                <Grid Grid.Row="1"
+                      Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <controls:SetpointControl HorizontalAlignment="Center" Setpoint="{Binding HeatSetpoint, Mode=TwoWay}" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <controls:SetpointControl HorizontalAlignment="Center" Setpoint="{Binding CoolSetpoint, Mode=TwoWay}" />
+                    </Grid>
+                    <Viewbox Grid.Column="1">
+                        <!--<controls:SetpointControl Setpoint="{Binding CoolSetpoint, Mode=TwoWay}" /> -->
+                    </Viewbox>
+                </Grid>
+            </Grid>
+
+            <Frame Grid.Row="1"
+                   Grid.Column="1"
+                   x:Name="weatherSummaryFrame" />
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Grid.Column="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

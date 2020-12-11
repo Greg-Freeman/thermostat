@@ -1,0 +1,27 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Brushes-->
+    <ImageBrush x:Name="DefaultAppBackgroundBrush" Stretch="Fill"  
+                ImageSource="../../Assets/Backgrounds/AppBackground.jpg"/>
+    
+    <!--Textblock-->
+    <Style x:Name="DefaultTextBlockStyle"
+           TargetType="TextBlock">
+        <Setter Property="Foreground"
+                Value="White" />
+    </Style>
+    
+    <!--Buttons-->
+    <Style x:Name="DefaultButtonStyle"
+           TargetType="Button">
+        <Setter Property="Foreground"
+                Value="White" />
+    </Style>
+
+    <!--Defaults-->
+    <Style TargetType="TextBlock"
+           BasedOn="{StaticResource DefaultTextBlockStyle}" />
+    <Style TargetType="Button"
+           BasedOn="{StaticResource DefaultButtonStyle}" />
+</ResourceDictionary>
