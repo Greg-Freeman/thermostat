@@ -28,6 +28,11 @@ namespace ThermostatGui.Shared.Controls
             this.InitializeComponent();
         }
 
+        private void SetpointControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         public int Setpoint
         {
             get { return (int)GetValue(SetpointProperty); }

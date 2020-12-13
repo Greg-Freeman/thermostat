@@ -8,6 +8,7 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
     <PackageReference Include="Uno.UI" Version="3.3.0" />
     <PackageReference Include="Uno.UI.Skia.Wpf" Version="3.3.0" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="3.3.0" Condition="'$(Configuration)'=='Debug'" />

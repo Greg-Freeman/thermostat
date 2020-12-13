@@ -4,7 +4,15 @@
     <!-- Brushes-->
     <ImageBrush x:Name="DefaultAppBackgroundBrush" Stretch="Fill"  
                 ImageSource="../../Assets/Backgrounds/AppBackground.jpg"/>
-    
+
+    <LinearGradientBrush x:Key="GradientBorderBrush" Opacity="1" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="pink" Offset="0"/>
+        <GradientStop Color="yellow" Offset=".5"/>
+        <GradientStop Color="pink" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="MainContentColorBrush" Color="CornflowerBlue" Opacity=".3" />
+
     <!--Textblock-->
     <Style x:Name="DefaultTextBlockStyle"
            TargetType="TextBlock">

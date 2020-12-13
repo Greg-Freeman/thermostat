@@ -8,8 +8,7 @@
       mc:Ignorable="d"
       Background="{StaticResource DefaultAppBackgroundBrush}">
 
-
-    <Grid Background="Transparent"
+    <Grid
           HorizontalAlignment="Stretch">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -20,13 +19,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0"
+               BorderThickness="0,0,0,1"
+               BorderBrush="DarkCyan"
               Grid.Column="0">
             <Viewbox StretchDirection="DownOnly">
                 <TextBlock>Mon Dec 02, 11:51 a.m.</TextBlock>
             </Viewbox>
         </Grid>
         <Grid Grid.Row="1"
-              Grid.Column="0">
+              Background="{StaticResource MainContentColorBrush}"
+              Grid.Column="0"
+              BorderThickness="0,0,0,1"
+              BorderBrush="DarkCyan">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -38,7 +42,6 @@
                 </Grid.RowDefinitions>
                 <Viewbox StretchDirection="Both"
                          Stretch="Uniform">
-
                     <TextBlock FontStretch="Expanded"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
@@ -46,6 +49,7 @@
                     </TextBlock>
                 </Viewbox>
                 <Grid Grid.Row="1"
+                      Margin="10"
                       Grid.Column="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -57,9 +61,6 @@
                     <Grid Grid.Column="1">
                         <controls:SetpointControl HorizontalAlignment="Center" Setpoint="{Binding CoolSetpoint, Mode=TwoWay}" />
                     </Grid>
-                    <Viewbox Grid.Column="1">
-                        <!--<controls:SetpointControl Setpoint="{Binding CoolSetpoint, Mode=TwoWay}" /> -->
-                    </Viewbox>
                 </Grid>
             </Grid>
 

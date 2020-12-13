@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using ThermostatGui.Shared;
 using ThermostatGui.Shared.Models;
+using ThermostatGui.Shared.Insets;
 using ThermostatGui.Shared.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -26,16 +27,14 @@ namespace ThermostatGui
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private readonly MainPageViewModel _viewModel;
-        public MainPageViewModel ViewModel => _viewModel;
+        private MainPageViewModel _viewModel;
 
         public MainPage()
         {
             this.InitializeComponent();
             this.weatherSummaryFrame.Navigate(typeof(CurrentWeatherInset));
-            _viewModel = new MainPageViewModel();
+           _viewModel = _viewModel ?? new MainPageViewModel();
             DataContext = _viewModel;
-
         }
     }
 }
